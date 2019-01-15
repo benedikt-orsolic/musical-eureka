@@ -1,9 +1,6 @@
+
 <?php
 	
-	$name = $_POST['username'];
-	$password = $_POST['password'];
-	
-	//echo 'User enterd:<br>'.'    Username: '.$name.'<br>    Password: '.$password;
 ?>
 
 
@@ -25,7 +22,6 @@
 
 
 <!DOCTYPE html>
-
 <head>
 	<title>Login page</title>
 	<link rel="stylesheet" href="css/login.css">
@@ -35,9 +31,7 @@
 	
 	
 	<nav>
-		<a hreg="/home.php">Home</a>
-		<a hreg="/home.php">Home</a>
-		<a hreg="/home.php">Home</a>
+		<a href="home.php">Home</a>
 	</nav>
 	
 	

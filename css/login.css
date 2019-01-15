@@ -1,0 +1,19 @@
+body {
+  background-color: #00cc00;
+}
+#login_form {
+	width:80%;
+	margin-left:10%;
+	margin-right:10%;
+	
+	margin-top: 10%;
+} 
+
+#submit_button {
+	float: right;
+	background-color: #66ff66;
+}
+
+.login_credentials {
+	background-color: #66ff66;
+}

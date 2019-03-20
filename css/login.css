@@ -3,7 +3,10 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	
+	background-color: #337733;
 }
+
 #login_form {
 	width:80%;
 	margin-left:10%;

@@ -1,6 +1,41 @@
-
 <?php
-	
+include "inc/dbconn.php";
+include "inc/login_helpers.php";
+session_start();
+
+
+
+
+
+
+
+/* When user clicks on login. *************************************************/
+if(isset($_POST['login']) and !isset($_SESSION['uuid'])){
+	login();
+}/*****************************************************************************/
+
+
+
+
+
+
+
+/* When user clicks on register. **********************************************/
+if(isset($_POST['register']) and !isset($_SESSION['uuid'])){
+	register($_POST['username'], $_POST['pwd']);
+}/*****************************************************************************/
+
+
+
+
+
+
+
+/* Redirect if loged in. ******************************************************/
+if(isset($_SESSION['uuid'])) { 
+	header('Location: index.php'); 
+}/*****************************************************************************/
+
 ?>
 
 
@@ -13,39 +48,28 @@
 
 
 
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<head>
-	<title>Login page</title>
-	<link rel="stylesheet" href="css/login.css">
-</head>
-
-<body>
+<?php include 'inc/header.php'; ?>
+<form id="login_form" method="POST"><fieldset>
+	<legend>Login</legend>
 	
+	Username:<input class="login_credentials" type="text" name="username">
+	<input id="submit" type="submit" value="Login" name="login"><br>
 	
-	<nav>
-		<a href="home.php">Home</a>
-	</nav>
+	Password: <input class="login_credentials" type="password" name="pwd"><br>
 	
+</fieldset></form>
+
+
+<form id="login_form" method="POST"><fieldset>
+	<legend>Or register a new account</legend>
 	
-	<form id="login_form" method="POST">
-		<fieldset>
-			<legend>Login information</legend>
-			
-			Username:<input class="login_credentials" type="text" name="username">
-			<input id="submit_button" type="submit" value="Login"><br>
-			
-			Password: <input class="login_credentials" type="password" name="password"><br>
-		</field>
-	</form>
+	Username:<input class="login_credentials" type="text" name="username">
+	<input id="submit" type="submit" value="Register" name="register"><br>
 	
-	
+	Password:<input class="login_credentials" type="password" name="pwd1"><br>
+	Repeat password:<input class="login_credentials" type="password" name="pwd2"><br>
+	e-mail:<input class="login_credentials" type="email" name="email"><br>
+</fieldset></form>
+
 </body> 
-</body> 
+</html> 
